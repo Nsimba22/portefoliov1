@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,14 +29,15 @@
     </div>
 
     <nav>
-      <a class="nav-link active" href="#inicio">⌂ <span>Início</span></a>
-      <a class="nav-link" href="#sobre">◎ <span>Sobre</span></a>
-      <a class="nav-link" href="#experiencia">▣ <span>Experiência</span></a>
-      <a class="nav-link" href="#formacao">◇ <span>Formação</span></a>
-      <a class="nav-link" href="#competencias">◈ <span>Competências</span></a>
-      <a class="nav-link" href="#projetos">▤ <span>Perfil</span></a>
-      <a class="nav-link" href="#documentos">▣ <span>Documentos</span></a>
-      <a class="nav-link" href="#contacto">✉ <span>Contacto</span></a>
+      <a class="nav-link active" href="#inicio"><i class="bi bi-house-door-fill"></i><span>Início</span></a>
+      <a class="nav-link" href="#sobre"><i class="bi bi-person-fill"></i><span>Sobre</span></a>
+      <a class="nav-link" href="#experiencia"><i class="bi bi-briefcase-fill"></i><span>Experiência</span></a>
+      <a class="nav-link" href="#formacao"><i class="bi bi-mortarboard-fill"></i><span>Formação</span></a>
+      <a class="nav-link" href="#competencias"><i class="bi bi-stars"></i><span>Competências</span></a>
+      <a class="nav-link" href="#analise-competencias"><i class="bi bi-bar-chart-fill"></i><span>Gráfico</span></a>
+      <a class="nav-link" href="#projetos"><i class="bi bi-grid-1x2-fill"></i><span>Perfil</span></a>
+      <a class="nav-link" href="#documentos"><i class="bi bi-folder-fill"></i><span>Documentos</span></a>
+      <a class="nav-link" href="#contacto"><i class="bi bi-envelope-fill"></i><span>Contacto</span></a>
     </nav>
 
     <div class="sidebar-bottom">
@@ -211,6 +214,17 @@
       </div>
     </section>
 
+    <section class="section" id="analise-competencias">
+      <div class="section-head reveal">
+        <div><span class="section-number">04</span><h2>Visão das competências</h2></div>
+        <p>Uma representação visual das principais competências profissionais.</p>
+      </div>
+      <div class="glass-card chart-card reveal">
+        <div class="card-title"><span class="card-icon"><i class="bi bi-bar-chart-fill"></i></span><h3>Competências profissionais</h3></div>
+        <div class="chart-wrap"><canvas id="skillsChart" aria-label="Gráfico de competências" role="img"></canvas></div>
+      </div>
+    </section>
+
     <section class="section" id="formacao">
       <div class="section-head reveal">
         <div><span class="section-number">04</span><h2>Formação</h2></div>
@@ -250,86 +264,29 @@
 
 
     <section class="section" id="documentos">
-      <div class="section-head reveal">
-        <div><span class="section-number">06</span><h2>Documentos</h2></div>
-        <p>Consulte os meus documentos profissionais antes de os descarregar.</p>
-      </div>
-
-      <div class="documents-toolbar reveal">
-        <div>
-          <span class="toolbar-icon">▣</span>
-          <div><strong>Documentação profissional</strong><small>Preview integrado · download individual · pacote completo</small></div>
-        </div>
-        <a class="btn btn-primary" id="downloadAll" href="assets/documentos/Documentos_Nsimba_Angelo.zip" download>Baixar todos <span>↓</span></a>
-      </div>
-
+      <div class="section-head reveal"><div><span class="section-number">07</span><h2>Documentos</h2></div><p>Consulte os meus documentos profissionais antes de os descarregar.</p></div>
+      <div class="documents-toolbar glass-card reveal"><div><span class="toolbar-icon"><i class="bi bi-folder2-open"></i></span><div><strong>Documentação profissional</strong><small>5 documentos · preview integrado · download individual</small></div></div><a class="btn btn-primary" id="downloadAll" href="assets/documentos/Documentos_Nsimba_Angelo.zip" download><i class="bi bi-download me-1"></i> Baixar todos</a></div>
       <div class="documents-grid">
-        <article class="document-card glass-card reveal" data-document="cv">
-          <div class="document-preview">
-            <div class="pdf-sheet cv-sheet">
-              <div class="mini-cv-title">NSIMBA ÂNGELO<br><span>JOÃO NIOCA</span></div>
-              <div class="mini-line wide"></div><div class="mini-line"></div>
-              <div class="mini-columns"><div><i></i><i></i><i></i><i></i></div><div><i class="long"></i><i class="long"></i><i></i><i class="long"></i></div></div>
-              <div class="preview-badge">PDF</div>
-            </div>
-          </div>
-          <div class="document-info">
-            <div><span class="doc-type">CV</span><span class="doc-status">Profissional</span></div>
-            <h3>Currículo — Recepcionista</h3>
-            <p>Currículo direcionado para Recepcionista, Front Office e Atendimento ao Cliente.</p>
-            <div class="document-actions">
-              <button class="preview-btn" data-preview="assets/documentos/CV_Nsimba_Angelo_Recepcionista.pdf" data-title="CV — Nsimba Ângelo">👁 Pré-visualizar</button>
-              <a class="download-btn" href="assets/documentos/CV_Nsimba_Angelo_Recepcionista.pdf" download>↓ Baixar</a>
-            </div>
-          </div>
+        <article class="document-card glass-card reveal">
+          <div class="document-preview real-preview"><div class="file-icon"><i class="bi bi-file-earmark-person"></i><span>PDF</span></div></div>
+          <div class="document-info"><div><span class="doc-type">CV</span><span class="doc-status">Profissional</span></div><h3>CV — Recepcionista</h3><p>Currículo direcionado para Recepcionista, Front Office e Atendimento ao Cliente.</p><div class="document-actions"><button class="preview-btn" data-preview="assets/documentos/CV_Nsimba_Recepcionista.pdf" data-title="CV — Recepcionista"><i class="bi bi-eye me-1"></i> Pré-visualizar</button><a class="download-btn" href="assets/documentos/CV_Nsimba_Recepcionista.pdf" download><i class="bi bi-download"></i> Baixar</a></div></div>
         </article>
-
-        <article class="document-card glass-card reveal delay-1" data-document="certificado">
-          <div class="document-preview">
-            <div class="pdf-sheet certificate-sheet">
-              <div class="cert-emblem">✦</div>
-              <div class="cert-title">CERTIFICADO</div>
-              <div class="cert-line"></div>
-              <div class="cert-body">FORMAÇÃO<br><b>PROFISSIONAL</b></div>
-              <div class="cert-sign"></div>
-              <div class="preview-badge">PDF</div>
-            </div>
-          </div>
-          <div class="document-info">
-            <div><span class="doc-type">CERTIFICADO</span><span class="doc-status">Formação</span></div>
-            <h3>Certificado de Formação</h3>
-            <p>Documento de formação profissional disponibilizado para consulta e download.</p>
-            <div class="document-actions">
-              <button class="preview-btn" data-preview="assets/documentos/certificado_formacao.pdf" data-title="Certificado de Formação">👁 Pré-visualizar</button>
-              <a class="download-btn" href="assets/documentos/certificado_formacao.pdf" download>↓ Baixar</a>
-            </div>
-          </div>
+        <article class="document-card glass-card reveal delay-1">
+          <div class="document-preview real-preview"><div class="file-icon"><i class="bi bi-headset"></i><span>PDF</span></div></div>
+          <div class="document-info"><div><span class="doc-type">CV</span><span class="doc-status">Atendimento</span></div><h3>CV — Assistente de Atendimento</h3><p>Versão direcionada para atendimento, recepção e relacionamento com clientes.</p><div class="document-actions"><button class="preview-btn" data-preview="assets/documentos/CV_Nsimba_Assistente_Atendimento.pdf" data-title="CV — Assistente de Atendimento"><i class="bi bi-eye me-1"></i> Pré-visualizar</button><a class="download-btn" href="assets/documentos/CV_Nsimba_Assistente_Atendimento.pdf" download><i class="bi bi-download"></i> Baixar</a></div></div>
         </article>
-
-        <article class="document-card glass-card reveal delay-2" data-document="id">
-          <div class="document-preview">
-            <div class="pdf-sheet id-sheet">
-              <div class="id-head">REPÚBLICA DE ANGOLA</div>
-              <div class="id-body"><div class="id-photo"></div><div><i></i><i></i><i class="long"></i><i></i><i class="long"></i></div></div>
-              <div class="privacy-cover">DOCUMENTO<br>DE IDENTIFICAÇÃO</div>
-              <div class="preview-badge">PDF</div>
-            </div>
-          </div>
-          <div class="document-info">
-            <div><span class="doc-type">IDENTIFICAÇÃO</span><span class="doc-status warning">Privado</span></div>
-            <h3>Bilhete de Identidade</h3>
-            <p>Documento de identificação. Recomenda-se não publicar este documento em páginas públicas.</p>
-            <div class="document-actions">
-              <button class="preview-btn" data-preview="assets/documentos/bilhete_identidade.pdf" data-title="Bilhete de Identidade">👁 Pré-visualizar</button>
-              <a class="download-btn" href="assets/documentos/bilhete_identidade.pdf" download>↓ Baixar</a>
-            </div>
-          </div>
+        <article class="document-card glass-card reveal delay-2">
+          <div class="document-preview real-preview"><div class="file-icon"><i class="bi bi-code-slash"></i><span>PDF</span></div></div>
+          <div class="document-info"><div><span class="doc-type">CV</span><span class="doc-status">Informática</span></div><h3>CV — Técnico Informático</h3><p>Versão direcionada para suporte, informática e desenvolvimento web.</p><div class="document-actions"><button class="preview-btn" data-preview="assets/documentos/CV_Nsimba_Tecnico_Informatico.pdf" data-title="CV — Técnico Informático"><i class="bi bi-eye me-1"></i> Pré-visualizar</button><a class="download-btn" href="assets/documentos/CV_Nsimba_Tecnico_Informatico.pdf" download><i class="bi bi-download"></i> Baixar</a></div></div>
         </article>
-      </div>
-
-      <div class="document-note reveal">
-        <span>⚠</span>
-        <p><strong>Privacidade:</strong> o Bilhete de Identidade contém dados pessoais. Se este portefólio for publicado na internet, o ideal é manter esse documento fora da versão pública ou protegê-lo com acesso restrito.</p>
+        <article class="document-card glass-card reveal delay-3">
+          <div class="document-preview real-preview"><div class="file-icon"><i class="bi bi-mortarboard-fill"></i><span>PDF</span></div></div>
+          <div class="document-info"><div><span class="doc-type">CERTIFICADO</span><span class="doc-status">Académico</span></div><h3>Certificado do Ensino Médio</h3><p>Documento académico disponibilizado para consulta e download.</p><div class="document-actions"><button class="preview-btn" data-preview="assets/documentos/Certificado_do_medio.pdf" data-title="Certificado do Ensino Médio"><i class="bi bi-eye me-1"></i> Pré-visualizar</button><a class="download-btn" href="assets/documentos/Certificado_do_medio.pdf" download><i class="bi bi-download"></i> Baixar</a></div></div>
+        </article>
+        <article class="document-card glass-card reveal delay-3">
+          <div class="document-preview real-preview"><div class="file-icon"><i class="bi bi-translate"></i><span>PDF</span></div></div>
+          <div class="document-info"><div><span class="doc-type">CERTIFICADO</span><span class="doc-status">Inglês</span></div><h3>Certificado de Inglês</h3><p>Certificado de formação em língua inglesa disponibilizado para consulta.</p><div class="document-actions"><button class="preview-btn" data-preview="assets/documentos/certificado_de_ingles.pdf" data-title="Certificado de Inglês"><i class="bi bi-eye me-1"></i> Pré-visualizar</button><a class="download-btn" href="assets/documentos/certificado_de_ingles.pdf" download><i class="bi bi-download"></i> Baixar</a></div></div>
+        </article>
       </div>
     </section>
 
@@ -371,6 +328,8 @@
   </div>
 
   <button id="topBtn" class="top-btn" aria-label="Voltar ao topo">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

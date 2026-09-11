@@ -162,3 +162,8 @@ if (downloadAll) {
     setTimeout(() => downloadAll.innerHTML = original, 1800);
   });
 }
+
+/* Chart.js follows the device theme automatically. */
+function portfolioTheme(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}
+function makeSkillsChart(){const c=document.getElementById('skillsChart');if(!c||typeof Chart==='undefined')return;const light=portfolioTheme()==='light',text=light?'#4b5568':'#a7aec3',grid=light?'rgba(30,40,60,.10)':'rgba(255,255,255,.08)';const old=Chart.getChart(c);if(old)old.destroy();new Chart(c,{type:'bar',data:{labels:['Atendimento','Comunicação','Inglês','Informática','Organização','Web'],datasets:[{label:'Nível (%)',data:[95,95,90,95,92,70],borderRadius:8,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:x=>` ${x.parsed.y}%`}}},scales:{x:{ticks:{color:text},grid:{display:false}},y:{beginAtZero:true,max:100,ticks:{color:text,callback:v=>v+'%'},grid:{color:grid}}}}})}
+window.addEventListener('load',makeSkillsChart);const pm=window.matchMedia?.('(prefers-color-scheme: light)');pm?.addEventListener?.('change',makeSkillsChart);
